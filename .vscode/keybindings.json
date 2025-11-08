@@ -1,0 +1,7 @@
+[
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Create New Day File"
+    }
+]

@@ -1,0 +1,115 @@
+/* 
+ * This is part 1 of the code selection. The following code implements a basic function 
+ * to calculate the factorial of a given number using recursion. It serves as an 
+ * introductory example for understanding recursive algorithms in Maxima. The function 
+ * checks for non-negative integers and returns 1 for 0 or 1, otherwise multiplying 
+ * the number by the factorial of (n-1). This contextualizes the recursive approach 
+ * in computational mathematics, highlighting efficiency for small inputs and potential 
+ * stack overflow for large ones.
+ */
+
+Receita_Estado : 95000;
+Despesa_Educacao : 14649;
+Despesa_Saude : 13500;
+Despesa_Juros : 7023;
+
+/* Function to calculate percentage */
+percentage(value, total) := float( round( (value / total) * 100 * 100 ) / 100 );
+
+percentage(Despesa_Educacao, Receita_Estado);
+percentage(Despesa_Saude, Receita_Estado);
+percentage(Despesa_Juros, Receita_Estado);
+
+
+/* part 2*/
+
+/* Function for regra dos três simples: given a, b, c, computes d such that a/b = c/d 
+or a ---- b
+   c ---- regra_tres(a,b,c)
+
+   a está para b como c está para regra_tres(a,b,c)
+*/
+regra_tres(a, b, c) := float( (b * c) / a );
+
+regra_tres(3000, 150, 95000);
+
+
+/* part 3 */
+
+Receita_por_Habitante : float(95000/10.3);
+Receita_mensal_por_Habitante : float(Receita_por_Habitante / 12);
+
+
+/* part 4 */
+
+/*
+ * Explanation of : vs := in Maxima
+ *
+ * In Maxima, : and := are operators for assignment and function definition, respectively.
+ *
+ * - : (colon) is used for variable assignment. It stores a value in the symbol's value cell.
+ *   Example: x : 5; assigns 5 to x.
+ *   Internally, this sets the value property of the symbol x.
+ *
+ * - := (colon equals) is used for defining functions or macros. It stores a lambda expression
+ *   in the symbol's function cell.
+ *   Example: f(x) := x^2; defines a function f that squares its argument.
+ *   Internally, this creates a function object that can be evaluated with arguments.
+ *
+ * Key differences:
+ * - : assigns a static value; := defines a computable expression.
+ * - Variables assigned with : can be reassigned; functions with := can be redefined.
+ *
+ * Edge cases:
+ * - Redefining a function: f(x) := x + 1; then f(x) := x^2; overwrites the function.
+ * - Using : inside a function: Allowed, but changes are local unless global.
+ * - Symbolic vs numerical: : can assign symbols, := can use them in expressions.
+ *
+ * Internal logic:
+ * - Maxima uses Lisp internally. : translates to (setf (symbol-value 'x) value)
+ * - := translates to (setf (symbol-function 'f) (lambda ...))
+ * - Evaluation: Variables are looked up in value cell; functions in function cell.
+ *
+ * When to use:
+ * - Use : for constants, data, or intermediate results.
+ * - Use := for reusable computations, especially with parameters.
+ *
+ * Examples:
+ */
+
+/* Example with : - variable assignment */
+a : 10;
+b : a + 5;  /* b is 15 */
+
+/* Example with := - function definition */
+square(x) := x^2;
+result : square(4);  /* result is 16 */
+
+/* Edge case: redefining */
+old_func(x) := x;
+new_func(x) := x * 2;
+old_func(5);  /* 5 */
+new_func(5);  /* 10 */
+
+/* Internal: showing value vs function */
+symbol_value : 'a;  /* symbol_value is the symbol a */
+func_value : 'square;  /* func_value is the function symbol */ 
+
+/* part 5*/
+
+/* part 5: Creating a list of the calculated percentages */
+anos : [2024, 2025, 2026];
+Orcamento_Educacao : [13200, 14100, 14649];
+Orcamento_Total : [90000, 92500, 95033];
+
+percentages : map(percentage, Orcamento_Educacao, Orcamento_Total);
+
+Orcamento_Educacao[length(Orcamento_Educacao)] - Orcamento_Educacao[1];
+Orcamento_Total[length(Orcamento_Total)] - Orcamento_Total[1];
+percentages[length(percentages)] - percentages[1];
+
+f(i) := 120 - i*2;
+f(4);
+f(9);
+
+solve(60 = f(i), i);

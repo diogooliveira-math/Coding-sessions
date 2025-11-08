@@ -1,0 +1,10 @@
+# Exclude Maxima documentation to keep repo focused and smaller
+Maxima/doc/
+
+# Temporary files
+*.tmp
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db

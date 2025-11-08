@@ -1,0 +1,23 @@
+{
+    "terminal.integrated.tabs.location": "right",
+    "terminal.integrated.defaultLocation": "editor",
+    "multiCommand.commands": [
+        {
+            "command": "runMaximaSideBySide",
+            "sequence": [
+                "workbench.action.splitEditorRight",
+                {
+                    "command": "workbench.action.focusSecondEditorGroup"
+                },
+                {
+                    "command": "workbench.action.tasks.runTask",
+                    "args": "Run Maxima Script"
+                },
+                "workbench.action.terminal.moveToEditor",
+                {
+                    "command": "workbench.action.focusFirstEditorGroup"
+                }
+            ]
+        }
+    ]
+}

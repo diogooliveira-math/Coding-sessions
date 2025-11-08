@@ -1,0 +1,48 @@
+/* Maxima Coding Day 1 - Introduction to Symbolic Computation */
+
+/* Basic arithmetic */
+print("Basic arithmetic:");
+a: 5;
+b: 3;
+print("a =", a, ", b =", b);
+print("a + b =", a + b);
+print("a * b =", a * b);
+print("a / b =", a / b);
+
+/* Symbolic expressions */
+newline();
+print("Symbolic expressions:");
+x;
+y;
+print("x =", x, ", y =", y);
+expr: x^2 + 2*x + 1;
+print("expr =", expr);
+expanded: expand((x+1)^2);
+print("expanded (x+1)^2 =", expanded);
+
+/* Differentiation */
+newline();
+print("Differentiation:");
+f: sin(x);
+df: diff(f, x);
+print("d/dx sin(x) =", df);
+
+/* Integration */
+newline();
+print("Integration:");
+integral: integrate(cos(x), x);
+print("∫ cos(x) dx =", integral);
+
+/* Solving equations */
+newline();
+print("Solving equations:");
+eq: x^2 - 4 = 0;
+solutions: solve(eq, x);
+print("Solutions to x^2 - 4 = 0:", solutions);
+
+/* Defining functions */
+newline();
+print("Defining functions:");
+f(x) := x^2 + 2*x + 1;
+print("f(2) =", f(2));
+print("f(a) =", f(a));
