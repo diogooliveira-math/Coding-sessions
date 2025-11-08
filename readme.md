@@ -2,12 +2,20 @@
 
 This folder serves as a dumping ground for coding experiments across different programming languages.
 
+## Table of Contents
+
+- [Setup for Contributors](#setup-for-contributors)
+- [Organization](#organization)
+- [Current Projects](#current-projects)
+- [Utilities](#utilities)
+- [VS Code Configuration](#vs-code-configuration-vscode)
+- [TODO List](#todo-list)
+
 ## Setup for Contributors
 
 To use this repository:
 1. Install Maxima from [maxima.sourceforge.net](https://maxima.sourceforge.net/).
-2. Set the `MAXIMA_PATH` environment variable to your Maxima installation directory (e.g., `C:\maxima-5.48.1` on Windows).
-   - On Windows: System Properties > Environment Variables, or in terminal: `set MAXIMA_PATH=C:\path\to\maxima`
+2. The Maxima installation path is hardcoded in the VS Code tasks for simplicity. If your installation is in a different location, update the path in `.vscode/tasks.json`.
 3. The `.gitignore` file excludes the `Maxima/doc/` folder to keep the repository focused on your code.
 
 ## Organization
@@ -22,7 +30,7 @@ Each day may contain experiments in various programming languages and technologi
 
 ## Current Projects
 
-- **Maxima**: Symbolic computation and mathematical modeling experiments (days 1-2 completed)
+- **Maxima**: Symbolic computation and mathematical modeling experiments (days 1-2 completed). See [Maxima/README.md](Maxima/README.md) for details.
 
 ## Utilities
 
@@ -33,12 +41,14 @@ Each day may contain experiments in various programming languages and technologi
 The `.vscode/` folder contains configuration files that enhance the development experience in VS Code:
 
 - `tasks.json`: Defines two build tasks:
-  - "Run Maxima Script": Executes the current `.mac` file using Maxima in batch mode, with output displayed in a dedicated terminal panel. Requires the `MAXIMA_PATH` environment variable to be set to your Maxima installation directory (e.g., `C:\maxima-5.48.1`).
+  - "Run Maxima Script": Executes the current `.mac` file using Maxima in batch mode (hardcoded path: `C:\maxima-5.48.1\bin\maxima.bat`), with output displayed in a dedicated terminal panel.
   - "Create New Day File": Runs the `new_day.ps1` script to generate new day files.
 
 - `settings.json`: Configures VS Code settings including terminal placement and defines a multi-command "runMaximaSideBySide" that splits the editor, runs the Maxima script in the right pane, and moves the terminal to the editor area.
 
 - `keybindings.json`: Binds the key combination `Ctrl+Shift+Alt+N` to execute the "Create New Day File" task for quick access.## TODO List
+
+# TODO list
 
 - [ ] Enhance the "Run Maxima Script" task to automatically split the terminal panel to the right, simplifying the workflow.
     - Possible approaches:

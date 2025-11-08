@@ -4,7 +4,7 @@
 		{
 			"label": "Run Maxima Script",
 			"type": "shell",
-			"command": "${env:MAXIMA_PATH}\\bin\\maxima.bat",
+			"command": "C:\\maxima-5.48.1\\bin\\maxima.bat",
 			"args": [
 				"-b",
 				"${fileBasename}"
