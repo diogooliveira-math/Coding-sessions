@@ -1,0 +1,11 @@
+name = "knowledge-base"
+version = "0.1.0"
+
+[[lean_lib]]
+name = "KnowledgeBase"
+root = "Main"
+
+[[lean_exe]]
+name = "knowledge-base"
+supportInterpreter = true
+root = "Main"

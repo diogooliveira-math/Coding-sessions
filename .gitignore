@@ -1,5 +1,9 @@
 # Exclude Maxima documentation to keep repo focused and smaller
 Maxima/doc/
+Lean/doc/
+
+# Separate repository - AI-Powered Curriculum Generator
+Python/AI-Powered_Curriculum_Generator/
 
 # Temporary files
 *.tmp
