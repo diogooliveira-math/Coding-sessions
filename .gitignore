@@ -5,6 +5,23 @@ Lean/doc/
 # Separate repository - AI-Powered Curriculum Generator
 Python/AI-Powered_Curriculum_Generator/
 
+# AI/ML model files and caches (Docling, DistilIA, etc.)
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth
+*.h5
+*.pb
+*.tflite
+*.mlmodel
+models/
+model_cache/
+.cache/
+__pycache__/
+*.pyc
+.huggingface/
+
 # Lean build artifacts and caches
 .lake/
 build/
