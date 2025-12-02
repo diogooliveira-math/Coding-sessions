@@ -6,10 +6,43 @@ Lean/doc/
 Python/AI-Powered_Curriculum_Generator/
 Python/Curriculum&IA_Based_Exercises/
 
+# AI/ML model files and caches (Docling, DistilIA, etc.)
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth
+*.h5
+*.pb
+*.tflite
+*.mlmodel
+models/
+model_cache/
+.cache/
+__pycache__/
+*.pyc
+.huggingface/
+
+# Lean build artifacts and caches
+.lake/
+build/
+.lean/
+lake-packages/
+*.olean
+
 # Temporary files
 *.tmp
 *.log
+*.swp
+*.swo
+*~
 
 # OS-specific files
 .DS_Store
 Thumbs.db
+*.bak
+
+# IDE specific files (additional)
+.idea/
+*.iml
+.vscode/*.log
